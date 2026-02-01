@@ -5,6 +5,8 @@ import {
   Menu, X, ArrowRight, Users, BookOpen, Award, 
   Search, CheckCircle, Globe, Zap, MessageSquare, Star, Github, Twitter, Linkedin, Youtube
 } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const CountUp = ({ endValue, duration = 2000 }) => {
   const [count, setCount] = useState(0);
@@ -76,82 +78,7 @@ export default function SkillSwapHomepage() {
   return (
     <div className="min-h-screen bg-slate-50 selection:bg-blue-100 overflow-x-hidden">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="flex justify-between items-center h-20">
-      {/* Logo Section - Redirect to Home */}
-      <a href="/" className="flex items-center gap-2 group">
-        <div className="bg-blue-600 p-2 rounded-xl group-hover:rotate-12 transition-transform">
-          <Zap className="text-white" size={24} />
-        </div>
-        <span className="text-2xl font-black text-slate-900 tracking-tight">SkillSwap</span>
-      </a>
-
-      {/* Desktop Menu - Map with Paths */}
-      <div className="hidden md:flex items-center space-x-10">
-        {[
-          { name: 'Browse Skills', link: '/browse' },
-          { name: 'How It Works', link: '/how-it-works' },
-          { name: 'Community', link: '/community' },
-        ].map((item) => (
-          <a key={item.name} href={item.link} className="text-sm font-semibold text-gray-600 hover:text-blue-600 transition-colors uppercase tracking-wider">
-            {item.name}
-          </a>
-        ))}
-        <div className="h-6 w-px bg-gray-200"></div>
-        <a href="/signin" className="text-sm font-semibold text-gray-600 hover:text-blue-600 transition">Sign In</a>
-        <a href="/signup">
-          <button className="bg-blue-600 text-white px-7 py-3 rounded-full font-bold shadow-lg shadow-blue-200 hover:bg-blue-700 hover:-translate-y-0.5 transition-all">
-            Get Started
-          </button>
-        </a>
-      </div>
-
-      {/* Mobile Menu Button */}
-      <div className="md:hidden">
-        <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="p-2 text-gray-700">
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
-    </div>
-  </div>
-
-  {/* FIXED: Mobile Dropdown Menu with Locations */}
- 
-    {mobileMenuOpen && (
-      <motion.div 
-        initial={{ opacity: 0, height: 0 }}
-        animate={{ opacity: 1, height: 'auto' }}
-        exit={{ opacity: 0, height: 0 }}
-        className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
-      >
-        <div className="px-4 pt-2 pb-6 space-y-2 shadow-xl">
-          {[
-            { name: 'Browse Skills', link: '/browse' },
-            { name: 'How It Works', link: '/how-it-works' },
-            { name: 'Community', link: '/community' },
-            { name: 'Sign In', link: '/signin' }
-          ].map((item) => (
-            <a 
-              key={item.name} 
-              href={item.link} 
-              onClick={() => setMobileMenuOpen(false)} // Page change pe menu close ho jaye
-              className="block px-3 py-4 text-base font-bold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-xl transition-all"
-            >
-              {item.name}
-            </a>
-          ))}
-          <div className="pt-4">
-            <a href="/signup" onClick={() => setMobileMenuOpen(false)}>
-              <button className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold shadow-lg">
-                Get Started
-              </button>
-            </a>
-          </div>
-        </div>
-      </motion.div>
-    )}
-</nav>
+      <Navbar/>
 
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-16 pb-28">
@@ -458,95 +385,7 @@ export default function SkillSwapHomepage() {
 </section>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-slate-300 pt-20 pb-10">
-  <div className="max-w-7xl mx-auto px-6 lg:px-8">
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-      
-      {/* Brand Column */}
-      <div className="space-y-6">
-        <div className="flex items-center gap-2">
-          <div className="bg-blue-600 p-1.5 rounded-lg">
-            <Zap className="text-white fill-white" size={20} />
-          </div>
-          <span className="text-2xl font-bold text-white tracking-tight">SkillSwap</span>
-        </div>
-        <p className="text-slate-400 leading-relaxed">
-          The world's first decentralized skill-sharing economy. Connect, teach, and master new crafts without traditional barriers.
-        </p>
-        <div className="flex gap-4">
-  {[
-    { icon: <Twitter size={18} />, href: "#", label: "Twitter" },
-    { icon: <Github size={18} />, href: "#", label: "GitHub" },
-    { icon: <Linkedin size={18} />, href: "#", label: "LinkedIn" },
-    { icon: <Youtube size={18} />, href: "#", label: "YouTube" },
-  ].map((social, i) => (
-    <a
-      key={i}
-      href={social.href}
-      aria-label={social.label}
-      className="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
-    >
-      <div className="text-slate-400 group-hover:text-white transition-colors">
-        {social.icon}
-      </div>
-    </a>
-  ))}
-</div>
-      </div>
-
-      {/* Navigation - Column 1 */}
-      <div>
-        <h4 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">Platform</h4>
-        <ul className="space-y-4 text-sm font-medium">
-          <li><a href="#" className="hover:text-blue-400 transition">Browse Skills</a></li>
-          <li><a href="#" className="hover:text-blue-400 transition">How it Works</a></li>
-          <li><a href="#" className="hover:text-blue-400 transition">Pricing (Free)</a></li>
-          <li><a href="#" className="hover:text-blue-400 transition">SkillSwap Pro</a></li>
-        </ul>
-      </div>
-
-      {/* Navigation - Column 2 */}
-      <div>
-        <h4 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">Resources</h4>
-        <ul className="space-y-4 text-sm font-medium">
-          <li><a href="#" className="hover:text-blue-400 transition">Community Hub</a></li>
-          <li><a href="#" className="hover:text-blue-400 transition">Success Stories</a></li>
-          <li><a href="#" className="hover:text-blue-400 transition">Help Center</a></li>
-          <li><a href="#" className="hover:text-blue-400 transition">API Docs</a></li>
-        </ul>
-      </div>
-
-      {/* Newsletter Column */}
-      <div className="space-y-6">
-        <h4 className="text-white font-bold uppercase tracking-widest text-xs">Stay Updated</h4>
-        <p className="text-sm text-slate-400">Get the latest skill matches and news delivered to your inbox.</p>
-        <div className="relative">
-          <input 
-            type="email" 
-            placeholder="Enter email" 
-            className="w-full bg-slate-800 border border-slate-700 rounded-xl py-3 px-4 text-sm focus:outline-none focus:border-blue-500 transition"
-          />
-          <button className="absolute right-2 top-1.5 bg-blue-600 p-1.5 rounded-lg hover:bg-blue-500 transition">
-            <ArrowRight size={18} className="text-white" />
-          </button>
-        </div>
-      </div>
-
-    </div>
-
-    {/* Bottom Bar */}
-    <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
-      <div className="text-sm text-slate-500 font-medium">
-        &copy; 2026 SkillSwap. Developed with ❤️ for lifelong learners.
-      </div>
-      <div className="flex gap-8 text-xs font-bold uppercase tracking-tighter text-slate-500">
-        <a href="#" className="hover:text-white transition">Privacy Policy</a>
-        <a href="#" className="hover:text-white transition">Terms of Service</a>
-        <a href="#" className="hover:text-white transition">Cookie Settings</a>
-      </div>
-    </div>
-  </div>
-</footer>
+      <Footer/>
     </div>
   );
 }

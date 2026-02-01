@@ -13,6 +13,9 @@ import ProfileSettings from './components/Profile.jsx';
 import SessionsPage from './pages/SessionsPage.jsx';
 import ContactSupport from './components/Contact.jsx';
 import ScrollToTop from './components/Scrolltotop.jsx';
+import PrivacyPolicy from './components/Privacy.jsx';
+import TermsOfService from './components/Terms.jsx';
+import CookieSettings from './components/Cookie.jsx';
 
 function App() {
   return (
@@ -37,6 +40,9 @@ function App() {
           <Route path="/matches" element={<MatchesPage />} />
           <Route path="/profile" element={<ProfileSettings />} />
           <Route path="/contact" element={<ContactSupport />} />
+          <Route path="/privacy" element={<PrivacyPolicy/>}/>
+          <Route path="/terms" element={<TermsOfService/>}/>
+          <Route path="cookie" element={<CookieSettings/>}/>
 
           {/* 404 Page */}
           <Route path="*" element={<div className="p-20 text-center">404 - Page Not Found</div>} />
