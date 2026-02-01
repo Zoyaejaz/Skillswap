@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Cookie, CheckCircle2, Info } from 'lucide-react';
+import Footer from './Footer';
 
 const CookieSettings = () => {
   const [enabled, setEnabled] = useState({ analytics: true, marketing: false });
@@ -7,12 +8,12 @@ const CookieSettings = () => {
   const toggle = (key) => setEnabled(prev => ({ ...prev, [key]: !prev[key] }));
 
   return (
-    <div className="bg-slate-50 min-h-screen pt-32 pb-20 px-6">
-      <div className="max-w-2xl mx-auto">
+    <div className="bg-slate-50 min-h-screen pt-12  ">
+      <div className="max-w-2xl mx-auto pb-15">
         <div className="bg-white rounded-[2rem] border border-slate-200 overflow-hidden shadow-xl">
           
           {/* Top Branding Area */}
-          <div className="bg-slate-900 p-10 text-center">
+          <div className="bg-slate-900 p-10 text-center ">
             <div className="inline-block p-4 bg-blue-500/10 rounded-2xl mb-4">
               <Cookie className="text-blue-400" size={40} />
             </div>
@@ -66,6 +67,7 @@ const CookieSettings = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

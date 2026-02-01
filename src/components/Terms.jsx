@@ -1,5 +1,6 @@
 import React from 'react';
 import { Gavel, Users, ShieldAlert, Globe, Scale } from 'lucide-react';
+import Footer from './Footer';
 
 const TermsOfService = () => {
   return (
@@ -71,6 +72,7 @@ const TermsOfService = () => {
         </div>
 
       </div>
+      <Footer/>
     </div>
   );
 };
