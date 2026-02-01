@@ -10,7 +10,6 @@ export default function ForgotPassword() {
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
-      <Navbar />
 
       <main className="flex-grow flex items-center justify-center px-6 py-20 relative">
         <motion.div 
@@ -70,7 +69,6 @@ export default function ForgotPassword() {
         </motion.div>
       </main>
 
-      <Footer />
     </div>
   );
 }

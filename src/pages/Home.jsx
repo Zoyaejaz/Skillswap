@@ -419,21 +419,43 @@ export default function SkillSwapHomepage() {
 </section>
 
       {/* Final CTA */}
-      <section className="py-24 px-4">
-        <div className="max-w-5xl mx-auto bg-gradient-to-r from-blue-600 to-indigo-700 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-             <div className="grid grid-cols-6 gap-4 rotate-12 scale-150">
-                {[...Array(24)].map((_, i) => <Zap key={i} className="text-white" />)}
-             </div>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-8 relative z-10">
-            Start Learning <br className="hidden md:block"/> Without the Price Tag.
-          </h2>
-          <button onClick={() => navigate('/signup')} className="bg-white text-blue-700 px-10 py-5 rounded-2xl text-xl font-black shadow-2xl hover:bg-slate-100 transition-all relative z-10">
-            Create Your Profile Now
-          </button>
-        </div>
-      </section>
+      <section className="py-12 px-4"> {/* Reduced section padding from py-24 */}
+  <div className="max-w-5xl mx-auto bg-gradient-to-r from-blue-600 to-indigo-700 rounded-[2rem] p-8 md:p-12 text-center relative overflow-hidden shadow-xl">
+    {/* Decorative Background */}
+    <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+      <div className="grid grid-cols-8 gap-4 rotate-12 scale-125">
+        {[...Array(24)].map((_, i) => (
+          <Zap key={i} size={20} className="text-white fill-current" />
+        ))}
+      </div>
+    </div>
+
+    {/* Compact Content */}
+    <div className="relative z-10">
+      <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
+        Need Help? Get in Touch.
+      </h2>
+      <p className="text-blue-100 mb-8 text-base max-w-xl mx-auto opacity-90">
+        Have questions about your swaps or a feature idea? Our team is here to help you level up.
+      </p>
+      
+      <div className="flex flex-col sm:flex-row gap-3 justify-center">
+        <button 
+          onClick={() => window.location.href = 'mailto:support@skillswap.com'} 
+          className="bg-white text-blue-700 px-8 py-3.5 rounded-xl text-lg font-bold shadow-lg hover:bg-slate-50 transition-all"
+        >
+          Email Us
+        </button>
+        <button 
+          onClick={() => navigate('/chat-support')} 
+          className="bg-white/10 border border-white/20 text-white px-8 py-3.5 rounded-xl text-lg font-bold backdrop-blur-sm hover:bg-white/20 transition-all"
+        >
+          Live Chat
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="bg-slate-900 text-slate-300 pt-20 pb-10">

@@ -4,6 +4,14 @@ import Home from './pages/Home.jsx';
 import BrowsePage from './pages/BrowsePage.jsx';
 import CommunityHub from './pages/Community.jsx';
 import SignIn from './components/Signin.jsx';
+import SignUp from './components/Signup.jsx';
+import Forgot from './components/Forgot.jsx'
+import SkillSwapDashboard from './pages/Dashboard.jsx';
+import Messages from './components/Messages.jsx';
+import MatchesPage from './components/Matches.jsx';
+import ProfileSettings from './components/Profile.jsx';
+import SessionsPage from './pages/SessionsPage.jsx';
+import ContactSupport from './components/Contact.jsx';
 
 // Import your other pages here as you create them
 // import Browse from './pages/Browse.jsx';
@@ -19,10 +27,16 @@ function App() {
 
           {/* Define paths for your navigation links */}
           <Route path="/browse" element={<BrowsePage/>} />
-          <Route path="/how-it-works" element={<div>How It Works Page (Coming Soon)</div>} />
+          <Route path="/how-it-works" element={<SessionsPage/>} />
           <Route path="/community" element={<CommunityHub/>} />
           <Route path="/signin" element={<SignIn/>} />
-          <Route path="/signup" element={<div>Sign Up Page (Coming Soon)</div>} />
+          <Route path="/signup" element={<SignUp/>} />
+          <Route path="/forgot" element={<Forgot/>}/>
+          <Route path="/dashboard" element={<SkillSwapDashboard/>}/>
+          <Route path="/messages" element={<Messages/>}/>
+          <Route path="/matches" element={<MatchesPage/>}/>
+          <Route path="/profile" element={<ProfileSettings/>}/>
+          <Route path="/contact" element={<ContactSupport/>}/>
           
           
 
