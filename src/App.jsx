@@ -12,7 +12,7 @@ import MatchesPage from './components/Matches.jsx';
 import ProfileSettings from './components/Profile.jsx';
 import SessionsPage from './pages/SessionsPage.jsx';
 import ContactSupport from './components/Contact.jsx';
-import ScrollToTop from './components/Scrolltotop.jsx';
+import ScrollToTop from './components/ScrollToTop.jsx';
 import PrivacyPolicy from './components/Privacy.jsx';
 import TermsOfService from './components/Terms.jsx';
 import CookieSettings from './components/Cookie.jsx';

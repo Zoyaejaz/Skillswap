@@ -45,8 +45,7 @@ const Footer = () => {
             <ul className="space-y-4 text-sm font-medium">
               <li><a href="/browse" className="hover:text-blue-400 transition">Browse Skills</a></li>
               <li><a href="/how-it-works" className="hover:text-blue-400 transition">How it Works</a></li>
-              <li><a href="#" className="hover:text-blue-400 transition">Pricing (Free)</a></li>
-              <li><a href="#" className="hover:text-blue-400 transition">SkillSwap Pro</a></li>
+              <li><a href="/community" className="hover:text-blue-400 transition">Community</a></li>
             </ul>
           </div>
 
